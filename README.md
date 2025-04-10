@@ -2,6 +2,10 @@ Armemos receptores GNSS
 ================
 José Ramón Martínez Batlle
 
+## Código QR de este repo
+
+<img src="img/qr.jpg" style="width:50.0%" />
+
 ## Lista completa de materiales
 
 Creé este repo para alojar la lista de materiales (BOM) requeridos para
@@ -118,7 +122,7 @@ ofertas regularmente.</small>
 ![](img/aplic_12_hato_mayor_Screenshot_2024-10-12-11-47-08-436.jpg)
 ![](img/aplic_13_playa_IMG_20241201_121708.jpg)
 ![](img/aplic_14_playa_IMG_20241201_121711.jpg)
-![](img/aplic_15_mesa_IMG_20250409_145023.jpg)
+![](img/aplic_15_mesa_IMG_20250409_145023.jpg) ![](img/qr.jpg)
 
 ## Ver también
 

@@ -8,6 +8,10 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Código QR de este repo
+
+![](img/qr.jpg){width=50%}
+
 ## Lista completa de materiales
 
 Creé este repo para alojar la lista de materiales (BOM) requeridos para armar receptores GNSS. El repo es igualmente un apoyo para talleres de formación basados en aprendizaje práctico (manos a la obra, *hands-on*), donde los y las participantes se dividirían en grupos idealmente de 3 personas para armar una base permanente de interiores, que a la vez sea actualizable y expandible, y pensada para posibles adaptaciones de movilidad futuras.
