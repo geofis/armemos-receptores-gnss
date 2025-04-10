@@ -8,6 +8,8 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Lista completa de materiales
+
 Creé este repo para alojar la lista de materiales (BOM) requeridos para armar receptores GNSS. El repo es igualmente un apoyo para talleres de formación basados en aprendizaje práctico (manos a la obra, *hands-on*), donde los y las participantes se dividirían en grupos idealmente de 3 personas para armar una base permanente de interiores, que a la vez sea actualizable y expandible, y pensada para posibles adaptaciones de movilidad futuras.
 
 Esta alternativa es viable porque es relativamente fácil comenzar con un proyecto que no requiera estrictamente la impermeabilización, pero considerándola en primera instancia en el contexto del diseño expandible para lograr una eventual necesidad portabilidad. El diseño para interiores facilita muchas cosas en un taller de formación, pues lograr la estanqueidad de una caja o implementar un circuito de alimentación ininterrumpida, por ejemplo, suele ser desafiante.
@@ -24,7 +26,7 @@ La lista de partes sería básica (la imagen adjunta es un buen complemento visu
   - Regulador, tanto step-up (elevador de voltaje) como step-down (reductor de voltaje).
   - Baterías, normalmente, uso la 18650, de ión de litio, 3.7V. Las venden en la 30 de Marzo. En este caso, con tres sería suficiente.
 
-- Caja protectora. Uso cajas de registro eléctrico, cuyas dimensiones suelen ser variables, pero normalmente ???????????????????????????????????????
+- Caja protectora. Uso cajas de registro eléctrico, cuyas dimensiones suelen ser variables, pero normalmente uso las de 130x80x70 mm. Pero cualquier envase de plástico para comida, que resista algo de temperatura y sea impermeable, servirá.
 
 -   Antena GNSS, preferiblemente de plato.
 
@@ -39,3 +41,33 @@ La lista de partes sería básica (la imagen adjunta es un buen complemento visu
 -   Tornillos varios, M\*.
 
 -   Herramientas útiles pero no imprescindibles, porque yo las puedo aportar: crimpadora de cables para armar conectores JST, crimpadora para cables coaxiales y conectores, soldador, estaño, flux, pinzas de corte, y otras herramientas.
+
+## Componentes del receptor GNSS mostrado en la demo
+
+| Ítem | Precio (US$) |
+|:--|--:|
+| Tres Baterías 18650, mejor para 10 Ah | 15 |
+| Tres protectores de batería o PCM (sobredescarga, sobretensión y cortocircuito) | 3 |
+| Sistema de gestión de bateria (BMS) de DIY More MCP73871 | 3 |
+| Step-up / step-down TPS63070 | 1 |
+| Raspberry Pi Zero W | 15 |
+| Receptor (Unicore UM980) | 80* |
+| Coaxial corto MMCX (macho) - SMA (hembra) | 2 |
+| Antena de plato | 55 |
+| Interruptor (e.g., touch TTP223) | 1 | 
+| Disipadores | 5 |
+| Caja (registro eléctrico, de comida) | 5 |
+| Gastable, accesorios varios, tornillería, cables, conectores | 10 |
+| **Total** | **195** |
+
+
+<sup>*</sup><small>Pagué ese precio, pero ahora está más caro. Hacen ofertas regularmente.</small>
+
+```{r, results='asis', echo=F}
+imgs <- list.files('img', pattern = 'jpg|png', full.names = T)
+for(i in imgs) {cat('![](', i, ')\n', sep = '')}
+```
+
+## Ver también
+
+https://geofis.github.io/mdt-campus-uasd-gnss-bajo-costo/presentaciones/III-Congreso-IDI-XXIII-JIC-nov24.html
