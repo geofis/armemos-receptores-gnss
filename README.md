@@ -31,9 +31,11 @@ complemento visual):
   Unicore o Quectel, pero hay muchos otros a buen precio, como Bynav y
   ComNav).
 
-- Cerebro: Raspberry Zero W. Esto se podría sustituir por un
-  microcontrolador, pero nos obligaría a hacer más cosas en la parte de
-  programación.
+- Módulo de control o computación, “cerebro”: Raspberry Zero W. Esto se
+  podría sustituir por un microcontrolador, pero nos obligaría a hacer
+  más cosas en la parte de programación. En el caso de una base para
+  interiores, también se podría utilizar una PC, pero sería una solución
+  energéticamente ineficiente.
 
 - Alimentación de energía:
 
@@ -81,21 +83,21 @@ complemento visual):
 
 ## Componentes del receptor GNSS mostrado en la demo
 
-| Ítem                                                                            | Precio (US\$) |
-|:--------------------------------------------------------------------------------|--------------:|
-| Tres Baterías 18650, mejor para 10 Ah                                           |            15 |
-| Tres protectores de batería o PCM (sobredescarga, sobretensión y cortocircuito) |             3 |
-| Sistema de gestión de bateria (BMS) de DIY More MCP73871                        |             3 |
-| Step-up / step-down TPS63070                                                    |             1 |
-| Raspberry Pi Zero W                                                             |            15 |
-| Receptor (Unicore UM980)                                                        |          80\* |
-| Coaxial corto MMCX (macho) - SMA (hembra)                                       |             2 |
-| Antena de plato                                                                 |            55 |
-| Interruptor (e.g., touch TTP223)                                                |             1 |
-| Disipadores                                                                     |             5 |
-| Caja (registro eléctrico, de comida)                                            |             5 |
-| Gastable, accesorios varios, tornillería, cables, conectores                    |            10 |
-| **Total**                                                                       |       **195** |
+| Ítem | Precio (US\$) |
+|:---|---:|
+| Tres Baterías 18650, mejor para 10 Ah | 15 |
+| Tres protectores de batería o PCM (sobredescarga, sobretensión y cortocircuito) | 3 |
+| Sistema de gestión de bateria (BMS) de DIY More MCP73871 | 3 |
+| Step-up / step-down TPS63070 | 1 |
+| Raspberry Pi Zero W | 15 |
+| Receptor (Unicore UM980) | 80\* |
+| Coaxial corto MMCX (macho) - SMA (hembra) | 2 |
+| Antena de plato | 55 |
+| Interruptor (e.g., touch TTP223) | 1 |
+| Disipadores | 5 |
+| Caja (registro eléctrico, de comida) | 5 |
+| Gastable, accesorios varios, tornillería, cables, conectores | 10 |
+| **Total** | **195** |
 
 <sup>\*</sup><small>Pagué ese precio, pero ahora está más caro. Hacen
 ofertas regularmente.</small>
@@ -122,8 +124,115 @@ ofertas regularmente.</small>
 ![](img/aplic_12_hato_mayor_Screenshot_2024-10-12-11-47-08-436.jpg)
 ![](img/aplic_13_playa_IMG_20241201_121708.jpg)
 ![](img/aplic_14_playa_IMG_20241201_121711.jpg)
-![](img/aplic_15_mesa_IMG_20250409_145023.jpg) ![](img/qr.jpg)
+![](img/aplic_15_mesa_IMG_20250409_145023.jpg)
 
 ## Ver también
 
 <https://geofis.github.io/mdt-campus-uasd-gnss-bajo-costo/presentaciones/III-Congreso-IDI-XXIII-JIC-nov24.html>
+
+## Diseños posibles y lista de componentes
+
+> Ver ejemplos de componentes arriba.
+
+> En todos los casos de asume que existe conectividad a Internet; si se
+> requiriese transmisión/recepción por radio, a cada diseño habría que
+> añadir un transmisor (base) o receptor (rover).
+
+> En todos los casos, sobre todo en los equipos para el exterior, se
+> necesitarán conectores, conductores (normales, tipo mm o AWG, y
+> coaxiales), terminales (e.g. JST, SMA, u.Fl, MMCX, etc.), los cuales
+> deberán considerarse en la lista de materiales.
+
+### Base fija de interiores
+
+- Receptor GNSS con puerto USB.
+
+  - Alternativamente, si el receptor solo tiene terminal UART, se
+    requiere adaptador UART-USB, e.g. FTDI, pero esto no es requerido si
+    se usa microcontrolador en el lado computación.
+  - Ver marcas de receptores arriba, pero los precios más competitivos
+    los ofrecen Quectel, Unicore Communications y u-blox. En AliExpress,
+    ocasionalmente hay ofertas de receptores SINOGNSS. Es importante que
+    hagas tu propia búsqueda para que elijas lo que mejor se adapte a
+    tus necesidades. Los criterios comúnmente son: consumo, número de
+    frecuencias, eficiencia de disipación, tamaño.
+
+- Unidad control o computador. Cualquiera de las siguientes opciones es
+  válida, cada una con sus pros y sus contras:
+
+  - PC Windows o Linux (GUI).
+  - Raspberry Pi u otra marca de SBC (Linux, consola). En interiores no
+    hay restricciones energéticas, así que puedes usar una Raspberry Pi
+    4 o 3B+. Si necesitaras que el consumo fuese bajo, entonces
+    Raspberry Pi Zero W.
+  - Microcontrolador (e.g. ESP32).
+
+- Cable USB. En interiores, cualquier cable USB común es válido (casi
+  todos los receptores modernos usan USB-A en el extremo de la PC y
+  Tipo-C en el extremo del receptor).
+
+- (opcional) Si se requiere almacenamiento para posproceso, necesitarás
+  un disco con suficiente espacio (mejor uno dedicado).
+
+- Software: RTKBase, o directamente RTKLIB, o bibliotecas C++
+  (e.g. bibliotecas GNSS de Sparkfun) si se usa microcontrolador
+
+- Cuenta en rtk2go.com u Onocoy o Geodnet o crear un caster directamente
+  (esto último obliga a exponer la IP pública, por lo que se recomienda
+  usar un cliente VPN).
+
+- Antena GNSS capaz de recibir las frecuencias que el receptor pueda
+  procesar. La antena de plato es la mejor opción.
+
+### Base móvil/exteriores
+
+Misma lista que la anterior, con las siguientes particularidades:
+
+- La unidad de control o cómputo sólo podría ser SBC o microcontrolador.
+
+- Protección que sea resistente al polvo y al agua (estanqueidad
+  garantizada, grado IP o *ingress protection*). Una caja de registro
+  eléctrico, o similar, podría hacer el trabajo. Las cajas metálicas,
+  aunque son más pesadas, disipan mejor el calor, lo cual es importante
+  para el receptor y la unidad de control. Colocar un disipador de calor
+  pasivo, tanto sobre el módulo del receptor, como sobre la CPU de la
+  SBC o microcontrolador, es altamente recomendado.
+
+- Añadir sistema de alimentación, que incluye:
+
+  - Bateria(s) 3.7v (e.g. 18650)
+  - Protection Circuit Module (PCM),
+  - Battery Management System (BMS)
+  - Step-up/step-down
+
+### Rover (lógicamente, para exteriores) con alimentación propia
+
+Casi los mismos componentes que la base móvil, pero con las
+particularidades siguientes:
+
+- En el caso de que el receptor tenga buen filtro, una antena de tipo
+  *helix* puede funcionar.
+
+- Software.
+
+  - En el caso de usar SBC las opciones son limitadas, pero estoy usando
+    [BashRTKStation](https://github.com/geofis/BashRTKStation/).
+  - En el caso de usar microcontroldor, las bibliotecas GNSS de Sparkfun
+    son las más recomendadas.
+
+### Rover “híbrido”, con alimentación externa.
+
+Se podría considerar un rover híbrido, similar al anterior, en el que
+todo el módulo de alimentación externa podría sustituirse por un
+powerbank.
+
+## Proveedores sugeridos
+
+- AliExpress
+- Sparkfun
+- DigiKey
+- Mouser
+- Adafruit
+- ArduSimple
+- Amazon
+- eBay.
