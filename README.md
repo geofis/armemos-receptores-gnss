@@ -1,6 +1,6 @@
 Armemos receptores GNSS
 ================
-José Ramón Martínez Batlle
+José Ramón Martínez Batlle jmartinez19@uasd.edu.do
 
 ## Código QR de este repo
 
@@ -83,21 +83,21 @@ complemento visual):
 
 ## Componentes del receptor GNSS mostrado en la demo
 
-| Ítem | Precio (US\$) |
-|:---|---:|
-| Tres Baterías 18650, mejor para 10 Ah | 15 |
-| Tres protectores de batería o PCM (sobredescarga, sobretensión y cortocircuito) | 3 |
-| Sistema de gestión de bateria (BMS) de DIY More MCP73871 | 3 |
-| Step-up / step-down TPS63070 | 1 |
-| Raspberry Pi Zero W | 15 |
-| Receptor (Unicore UM980) | 80\* |
-| Coaxial corto MMCX (macho) - SMA (hembra) | 2 |
-| Antena de plato | 55 |
-| Interruptor (e.g., touch TTP223) | 1 |
-| Disipadores | 5 |
-| Caja (registro eléctrico, de comida) | 5 |
-| Gastable, accesorios varios, tornillería, cables, conectores | 10 |
-| **Total** | **195** |
+| Ítem                                                                            | Precio (US\$) |
+|:--------------------------------------------------------------------------------|--------------:|
+| Tres Baterías 18650, mejor para 10 Ah                                           |            15 |
+| Tres protectores de batería o PCM (sobredescarga, sobretensión y cortocircuito) |             3 |
+| Sistema de gestión de bateria (BMS) de DIY More MCP73871                        |             3 |
+| Step-up / step-down TPS63070                                                    |             1 |
+| Raspberry Pi Zero W                                                             |            15 |
+| Receptor (Unicore UM980)                                                        |          80\* |
+| Coaxial corto MMCX (macho) - SMA (hembra)                                       |             2 |
+| Antena de plato                                                                 |            55 |
+| Interruptor (e.g., touch TTP223)                                                |             1 |
+| Disipadores                                                                     |             5 |
+| Caja (registro eléctrico, de comida)                                            |             5 |
+| Gastable, accesorios varios, tornillería, cables, conectores                    |            10 |
+| **Total**                                                                       |       **195** |
 
 <sup>\*</sup><small>Pagué ese precio, pero ahora está más caro. Hacen
 ofertas regularmente.</small>

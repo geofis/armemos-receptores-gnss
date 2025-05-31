@@ -1,6 +1,6 @@
 ---
 title: "Armemos receptores GNSS"
-author: José Ramón Martínez Batlle
+author: José Ramón Martínez Batlle jmartinez19\@uasd.edu.do
 output: github_document
 ---
 
